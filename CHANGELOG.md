@@ -5,6 +5,14 @@ All notable changes to "Partial Diff" extension will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2025-03-01
+### Changed
+- Continued development as "Partial Diff Next"
+- Updated dependencies to their latest versions
+- Fixed compatibility issues with VS Code 1.80+
+- Made extension compatible with Open VSX Registry
+- Improved telemetry handling to respect VS Code's built-in settings
+
 ## [1.4.3] - 2021-04-15
 ### Changed
 - Improved the extension startup time by bundling js files into one. 10 times average has improved from 154ms to 7.8ms (95% reduced). [#46](https://github.com/ryu1kn/vscode-partial-diff/issues/46)

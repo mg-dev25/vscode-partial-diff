@@ -1,7 +1,35 @@
+# Partial Diff Next
+
+> **Note:** This is the next generation of the original [Partial Diff extension](https://github.com/ryu1kn/vscode-partial-diff) which is no longer maintained. This version aims to keep the extension working with newer versions of VS Code and add new features.
+
+## Roadmap
+
+The following improvements are planned for future releases:
+
+* **Enhanced Clipboard Interaction**
+  * Ability to swap comparing code windows
+  * Copy selected chunks from diff views (especially useful when working with AI-generated code)
+
+* **Patch File Support**
+  * Save diffs as `.patch` files
+  * Apply patches from clipboard to selections
+
+* **Improved Diff Experience**
+  * Editable text in diff views
+  * Display original text alongside normalized text
+  * Update diff view when toggling normalization rules without reopening
+
+* **Visual Enhancements**
+  * Full-width comparison mode
+  * Preserve formatting from original files
+
+* **Better Integration with VS Code**
+  * Follow VS Code's telemetry settings
+
 [![Build Status](https://travis-ci.org/ryu1kn/vscode-partial-diff.svg?branch=master)](https://travis-ci.org/ryu1kn/vscode-partial-diff)
 [![Code Climate](https://codeclimate.com/github/ryu1kn/vscode-partial-diff/badges/gpa.svg)](https://codeclimate.com/github/ryu1kn/vscode-partial-diff)
 
-# Partial Diff
+# Original Partial Diff
 
 ## Features
 
@@ -167,3 +195,7 @@ You can quickly mark the selected text by adding the `partial-diff` commands to 
     ```sh
     $ yarn run prep
     ```
+
+## Acknowledgments
+
+This extension was originally created and maintained by [Ryuichi Inagaki](https://github.com/ryu1kn). The "Partial Diff Next" version continues the development and maintenance of the extension for the VS Code community.

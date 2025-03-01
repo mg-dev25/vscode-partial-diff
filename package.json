@@ -1,8 +1,8 @@
 {
-  "name": "partial-diff",
-  "displayName": "Partial Diff",
-  "description": "Compare (diff) text selections within a file, across files, or to the clipboard",
-  "version": "1.4.4",
+  "name": "partial-diff-next",
+  "displayName": "Partial Diff Next",
+  "description": "Compare (diff) text selections within a file, across files, or to the clipboard - next generation",
+  "version": "1.5.0",
   "publisher": "ryu1kn",
   "license": "SEE LICENSE IN LICENSE.txt",
   "icon": "images/partial-diff_128x128.png",
@@ -15,7 +15,7 @@
     "url": "https://github.com/ryu1kn/vscode-partial-diff.git"
   },
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.80.0"
   },
   "categories": [
     "Other"
@@ -117,7 +117,7 @@
           "default": []
         },
         "partialDiff.enableTelemetry": {
-          "description": "Enable usage data to be sent to the extension authour",
+          "description": "DEPRECATED: Use VS Code's built-in telemetry settings instead. This setting will be removed in a future version.",
           "type": "boolean",
           "default": true
         }
@@ -194,8 +194,8 @@
     "vscode:postpublish": "./tag-release.sh"
   },
   "dependencies": {
-    "lodash.isequal": "4.5.0",
-    "lodash.omit": "4.5.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.omit": "^4.5.0",
     "@vscode/extension-telemetry": "^0.9.8"
   },
   "devDependencies": {
@@ -203,7 +203,7 @@
     "@types/lodash.omit": "^4.5.9",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.8",
-    "@types/vscode": "^1.97.0",
+    "@types/vscode": "^1.80.0",
     "codeclimate-test-reporter": "^0.5.1",
     "mocha": "^11.1.0",
     "nyc": "^17.1.0",
