@@ -8,7 +8,6 @@ import * as vscode from 'vscode';
 import CommandAdaptor from './adaptors/command';
 import WindowAdaptor from './adaptors/window';
 import { NullVsTelemetryReporter, VsTelemetryReporterCreator } from './telemetry-reporter';
-import VsTelemetryReporter from 'vscode-extension-telemetry';
 
 export default class BootstrapperFactory {
     private workspaceAdaptor?: WorkspaceAdaptor;
@@ -42,7 +41,7 @@ export default class BootstrapperFactory {
         if (enableTelemetry) {
             try {
                 // Dynamic import to avoid dependency errors in non-VSCode environments
-                const VsTelemetryReporter = require('vscode-extension-telemetry');
+                const VsTelemetryReporter = require('@vscode/extension-telemetry');
                 return (id: string, version: string, telemetryKey: string) => {
                     try {
                         return new VsTelemetryReporter(id, version, telemetryKey);

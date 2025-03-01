@@ -1,4 +1,4 @@
-import {mock, mockType, verify, when, mockMethods} from '../../helpers';
+import { mock, mockType, verify, when, mockMethods } from '../../helpers';
 import SelectionInfoRegistry from '../../../lib/selection-info-registry';
 import TextEditor from '../../../lib/adaptors/text-editor';
 import CommandFactory from '../../../lib/command-factory';
@@ -13,13 +13,13 @@ suite('CompareSelectionWithClipboardCommand', () => {
     const editor = mockType<TextEditor>({
         selectedText: 'SELECTED_TEXT',
         fileName: 'FILE2',
-        selectedLineRanges: [{start: 5, end: 10}]
+        selectedLineRanges: [{ start: 5, end: 10 }]
     });
     const selectionInfoRegistry = new SelectionInfoRegistry();
 
     test('it compares selected text with clipboard text', async () => {
         const clipboard = mockMethods<typeof vscode.env.clipboard>(['readText']);
-        when(clipboard.readText()).thenResolve('CLIPBOARD_TEXT');
+        when(clipboard.readText()).thenReturn(Promise.resolve('CLIPBOARD_TEXT'));
 
         const commandAdaptor = mock(CommandAdaptor);
         const windowAdaptor = mock(WindowAdaptor);
@@ -37,7 +37,7 @@ suite('CompareSelectionWithClipboardCommand', () => {
         });
         assert.deepEqual(selectionInfoRegistry.get('reg2'), {
             fileName: 'FILE2',
-            lineRanges: [{'start': 5, 'end': 10}],
+            lineRanges: [{ 'start': 5, 'end': 10 }],
             text: 'SELECTED_TEXT'
         });
         verify(commandAdaptor.executeCommand(

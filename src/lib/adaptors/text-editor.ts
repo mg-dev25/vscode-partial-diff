@@ -1,9 +1,9 @@
-import {Selection, TextEditor as VsTextEditor, ViewColumn} from 'vscode';
-import {basename} from 'path';
-import {LineRange} from '../types/selection-info';
+import { Selection, TextEditor as VsTextEditor, ViewColumn } from 'vscode';
+import { basename } from 'path';
+import { LineRange } from '../types/selection-info';
 
 export default class TextEditor {
-    constructor(private readonly vsEditor: VsTextEditor) {}
+    constructor(private readonly vsEditor: VsTextEditor) { }
 
     get fileName(): string {
         return basename(this.vsEditor.document.fileName);
@@ -23,7 +23,7 @@ export default class TextEditor {
         return this.extractLineRanges(validSelections);
     }
 
-    private collectNonEmptySelections(selections: Selection[]): Selection[] {
+    private collectNonEmptySelections(selections: readonly Selection[]): Selection[] {
         return selections.filter(s => !s.isEmpty).sort((s1, s2) => {
             const lineComparison = s1.start.line - s2.start.line;
             return lineComparison !== 0
