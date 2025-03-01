@@ -5,11 +5,11 @@ export function mock<T>(c: new (...args: any[]) => T): T {
     return new (td.constructor(c));
 }
 
-export function mockType<T>(params?: any): T {
+export function mockType<T extends object>(params?: any): T {
     return Object.assign({} as T, params);
 }
 
-export function mockMethods<T>(methods: string[], params?: any): T {
+export function mockMethods<T extends object>(methods: string[], params?: any): T {
     return Object.assign(td.object(methods) as T, params);
 }
 
@@ -18,7 +18,7 @@ export const when = td.when;
 export const contains = td.matchers.contains;
 export const any = td.matchers.anything;
 
-export function wrapVerify(invokeCallback: (...args: any[]) => void, expectedCalls: any[][] | {[key: string]: any[]}) {
+export function wrapVerify(invokeCallback: (...args: any[]) => void, expectedCalls: any[][] | { [key: string]: any[] }) {
     const captors = [td.matchers.captor(), td.matchers.captor(), td.matchers.captor()];
 
     invokeCallback(...captors.map(captor => captor.capture));

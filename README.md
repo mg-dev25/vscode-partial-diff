@@ -13,6 +13,26 @@
 
 ![Compare two text selections](https://raw.githubusercontent.com/ryu1kn/vscode-partial-diff/master/images/public.gif)
 
+## Installation
+
+### VS Code Marketplace
+
+1. Open VS Code
+2. Press `Ctrl+P` (or `Cmd+P` on macOS)
+3. Type `ext install ryu1kn.partial-diff`
+4. Press Enter
+
+### Open VSX Registry
+
+If you're using VSCodium or another editor that uses Open VSX:
+
+1. Open the editor
+2. Go to Extensions
+3. Search for "Partial Diff"
+4. Click Install
+
+Alternatively, you can download it directly from the [Open VSX Registry](https://open-vsx.org/extension/ryu1kn/partial-diff).
+
 ## Request Features or Report Bugs
 
 Feature requests and bug reports are very welcome: https://github.com/ryu1kn/vscode-partial-diff/issues
@@ -54,7 +74,7 @@ A couple of requests from me when you raise an github issue.
 * `partialDiff.commandsOnContextMenu` (default: `{"markSection1": true, ...}`, all commands visible)
 
     Commands appear on the context menu. Unlisted commands will still appear.
-   
+
     For example, if you don't want to see *Compare Text in Visible Editors* command (Command ID: `extension.partialDiff.diffVisibleEditors`)
     on the context menu, you can set this setting as follows:
 
@@ -107,7 +127,7 @@ A couple of requests from me when you raise an github issue.
 * `partialDiff.enableTelemetry` (default: `true`)
 
     Allow the extension usage data to be sent to the extension author.
-    
+
     Partial Diff sends usage data only when **both** `partialDiff.enableTelemetry` and
     [`telemetry.enableTelemetry`](https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting)
     are set to `true`.
